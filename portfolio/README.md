@@ -8,7 +8,7 @@
 
 ## 👤 프로필 & 자기소개
 
-<p align="center">
+<p align="left">
   <img src="images/myProfile.jpg" alt="내 프로필 사진" width="20%" />
 </p>
 
