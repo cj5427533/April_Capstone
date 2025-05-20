@@ -17,267 +17,364 @@
             }
         }
     </script>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="min-h-screen text-gray-800" id="dynamic-bg">
     <!-- 배경 패턴 오버레이 -->
     <div class="fixed inset-0 bg-pattern opacity-10 z-0"></div>
-    <style>
-        .bg-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        
-        #dynamic-bg {
-            background: linear-gradient(135deg, #6366f1 0%, #0ea5e9 50%, #06b6d4 100%);
-            background-size: 400% 400%;
-            background-attachment: fixed;
-            transition: background-position 0.3s ease;
-        }
-    </style>
+    
     <div class="container mx-auto px-4 py-8 max-w-4xl relative z-10">
-        <header class="text-center mb-12 bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-white/20">
+        <header class="text-center mb-12 bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-white/20 section-animate">
             <div class="flex flex-col md:flex-row items-center gap-8">
                 <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
                     <img src="images/myProfile.jpg" alt="GyuJin Cheon's Profile" class="w-full h-full object-cover">
                 </div>
                 <div class="flex-1 text-left">
-                    <h1 class="text-4xl font-bold mb-4 text-primary">👋 Hi, I'm GyuJin Cheon</h1>
-                    <p class="text-lg mb-4">사용자에게 정말 필요한 기능을 정의하고 구현하는 것을 중요시하는 개발자입니다.<br>프론트엔드와 백엔드 모두 경험이 있으며, 3D 기반 인터페이스 개발에 관심이 많습니다.</p>
+                    <h1 class="text-4xl font-bold mb-4 text-primary">👋 Hi, I'm <span class="title-emphasis">GyuJin Cheon</span></h1>
+                    <p class="text-lg mb-4 important-paragraph">사용자 중심의 UI/UX를 고민하며 <span class="highlight-text">웹과 모바일 모두에서 최적화된 경험</span>을 제공하는 개발자입니다.<br>프론트엔드와 백엔드 모두 경험이 있으며, 3D 기반 인터페이스 개발에 관심이 많습니다.</p>
                     <div class="space-y-2">
                         <p>🎓 재능대학교 컴퓨터소프트웨어학과 재학 중</p>
-                        <p>💻 Favorite Stack: JavaScript, Three.js, Node.js, MySQL</p>
+                        <p>💻 <strong>Favorite Stack:</strong> 
+                            <span class="key-skill">JavaScript</span>, 
+                            <span class="key-skill">React Native</span>, 
+                            <span class="key-skill">Three.js</span>, 
+                            <span class="key-skill">Node.js</span>, 
+                            <span class="key-skill">MySQL</span>
+                        </p>
                         <p>📧 Contact: <a href="mailto:cj542753303@gmail.com" class="text-primary hover:text-secondary">cj542753303@gmail.com</a></p>
                     </div>
                 </div>
             </div>
         </header>
 
-        <section class="mb-12 bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-white/20">
-            <h2 class="text-3xl font-bold mb-8 text-primary">🚀 Project</h2>
+        <section class="mb-12 bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-white/20 section-animate">
+            <h2 class="text-3xl font-bold mb-8 text-primary">
+                <span class="relative inline-block">
+                    🚀 Project
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-primary/20 rounded"></span>
+                </span>
+            </h2>
             <div class="space-y-12">
-                <article class="bg-white/80 rounded-xl shadow-lg overflow-hidden border border-sky-100">
+                <!-- JEIU 캠퍼스 익스플로러 3D -->
+                <article class="bg-white/80 rounded-xl shadow-lg overflow-hidden border border-sky-100 project-card">
                     <div class="bg-gradient-to-r from-sky-500 to-indigo-500 h-2"></div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2 text-sky-700">JEIU 캠퍼스 익스플로러 3D</h3>
-                    <div class="text-gray-600 mb-4">
-                        <p><strong>기간</strong>: 2025.03.26 ～ 2025.04.16</p>
-                        <p><strong>기여도</strong>: 프론트엔드 전체 구현 / 백엔드 연동 / UI 기획 및 디버깅 주도</p>
-                    </div>
-                    <p class="mb-4">재능대학교 캠퍼스를 3D로 구현한 웹 플랫폼입니다.<br>학생들이 강의실을 예약하고 각 건물의 이벤트·캠페인 정보를 시각적으로 확인할 수 있는 서비스입니다.</p>
-                    
-                    <div class="mb-4">
-                        <h4 class="font-semibold mb-2 text-sky-600">📌 주요 기능</h4>
-                        <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li>Three.js로 3D 캠퍼스 시각화 구현</li>
-                            <li>건물 클릭 시 이벤트 정보 확인 및 강의실 예약 기능</li>
-                            <li>Express API 연동 및 예약 시스템 DB 구축</li>
-                        </ul>
-                    </div>
+                        <h3 class="text-2xl font-semibold mb-2 text-sky-700 title-emphasis">JEIU 캠퍼스 익스플로러 3D</h3>
+                        <div class="text-gray-600 mb-4">
+                            <p><span class="date-badge"><strong>기간</strong>: 2025.03.26 ～ 2025.04.16</span></p>
+                            <p><strong>기여도</strong>: <span class="highlight-text">프론트엔드 전체 구현</span> / 백엔드 연동 / UI 기획 및 디버깅 주도</p>
+                        </div>
+                        <p class="mb-4 important-paragraph">재능대학교 캠퍼스를 3D로 구현한 웹 플랫폼입니다.<br>학생들이 강의실을 예약하고 각 건물의 이벤트·캠페인 정보를 시각적으로 확인할 수 있는 서비스입니다.</p>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2 text-sky-600">📌 주요 기능</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li><span class="highlight-text">Three.js로 3D 캠퍼스 시각화 구현</span></li>
+                                <li>건물 클릭 시 이벤트 정보 확인 및 강의실 예약 기능</li>
+                                <li>Express API 연동 및 예약 시스템 DB 구축</li>
+                            </ul>
+                        </div>
 
-                    <div class="mb-4">
-                        <h4 class="font-semibold mb-2">🔧 사용 기술</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full">Three.js</span>
-                            <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full">HTML/CSS</span>
-                            <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full">JavaScript</span>
-                            <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full">Express.js</span>
-                            <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full">MySQL</span>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">🔧 사용 기술</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag">Three.js</span>
+                                <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag">HTML/CSS</span>
+                                <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag">JavaScript</span>
+                                <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag">Express.js</span>
+                                <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag">MySQL</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="mb-4">
-                        <h4 class="font-semibold mb-2 text-sky-600">🧠 경험 포인트</h4>
-                        <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li>3D 기술(Three.js)을 직접 실습하며 실무 개발 감각 향상</li>
-                            <li>디자인툴로 UI 스케치 후 구현 → 사용자 중심 인터페이스 설계</li>
-                            <li>코드 충돌 해결 경험을 통해 협업 시 작업 분기 명확화의 중요성 체득</li>
-                            <li>디버깅/병합 주도 → 프론트엔드와 백엔드 구조 이해력 향상</li>
-                        </ul>
-                    </div>
-                    <!-- JEIU 캠퍼스 익스플로러 3D 프로젝트 이미지 3개 -->
-                    <div class="flex gap-4 mb-4">
-                        <div class="flex-1 aspect-video bg-gray-100 rounded-xl overflow-hidden shadow border border-sky-100 flex items-center justify-center">
-                            <img src="images/JEIU_Campus_1.png" alt="JEIU Campus 1" class="object-cover w-full h-full" />
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2 text-sky-600">🧠 경험 포인트</h4>
+                            <ul class="list-none space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-sky-500">✓</span>
+                                    <span>3D 기술(Three.js)을 직접 실습하며 <span class="key-skill">실무 개발 감각</span> 향상</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-sky-500">✓</span>
+                                    <span>디자인툴로 UI 스케치 후 구현 → <span class="highlight-text">사용자 중심 인터페이스 설계</span></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-sky-500">✓</span>
+                                    <span>코드 충돌 해결 경험을 통해 협업 시 작업 분기 명확화의 중요성 체득</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-sky-500">✓</span>
+                                    <span>디버깅/병합 주도 → 프론트엔드와 백엔드 구조 이해력 향상</span>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="flex-1 aspect-video bg-gray-100 rounded-xl overflow-hidden shadow border border-sky-100 flex items-center justify-center">
-                            <img src="images/JEIU_Campus_2.png" alt="JEIU Campus 2" class="object-cover w-full h-full" />
-                        </div>
-                        <div class="flex-1 aspect-video bg-gray-100 rounded-xl overflow-hidden shadow border border-sky-100 flex items-center justify-center">
-                            <img src="images/JEIU_Campus_3.png" alt="JEIU Campus 3" class="object-cover w-full h-full" />
-                        </div>
-                    </div>
 
-                    <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-lg border-l-4 border-indigo-500">
-                        <h4 class="font-semibold mb-2 text-indigo-600">💬 회고</h4>
-                        <p class="italic text-gray-700">"제안한 기술 스택을 실제로 도입하고 UI를 직접 구상·개발하며 실무와 유사한 경험을 쌓았습니다. '이 기능이 정말 필요한가?'라는 질문을 끝까지 던진 덕분에 단순 구현을 넘어 사용자 중심의 개발을 할 수 있었습니다."</p>
+                        <div class="flex gap-4 mb-4">
+                            <div class="flex-1 aspect-video bg-gray-100 rounded-xl overflow-hidden shadow border border-sky-100 flex items-center justify-center">
+                                <img src="images/JEIU_Campus_1.png" alt="JEIU Campus 1" class="object-cover w-full h-full" />
+                            </div>
+                            <div class="flex-1 aspect-video bg-gray-100 rounded-xl overflow-hidden shadow border border-sky-100 flex items-center justify-center">
+                                <img src="images/JEIU_Campus_2.png" alt="JEIU Campus 2" class="object-cover w-full h-full" />
+                            </div>
+                            <div class="flex-1 aspect-video bg-gray-100 rounded-xl overflow-hidden shadow border border-sky-100 flex items-center justify-center">
+                                <img src="images/JEIU_Campus_3.png" alt="JEIU Campus 3" class="object-cover w-full h-full" />
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2 text-sky-600">👥 대상 사용자</h4>
+                            <p class="text-gray-700">재능대학교 학생과 방문객들을 위해 만들었습니다. 특히 처음 학교에 오는 신입생들이 복잡한 캠퍼스 건물을 쉽게 찾고, 강의실도 간편하게 예약할 수 있게 하고 싶었습니다.</p>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-lg border-l-4 border-indigo-500 reflection-box">
+                            <h4 class="font-semibold mb-2 text-indigo-600">💬 회고및 내가 느끼기에 어려웠던 점</h4>
+                            <p class="italic text-gray-700">막 배우는 단계인 Three.js로 3D 캠퍼스를 구현한다는게 쉽지 않은 시작이었지만, 직접 기술 스택을 도입하고 UI를 구상하며 실무와 유사한 경험을 쌓았다. 3D 모델 최적화와 로딩 시간 개선이 가장 큰 도전이었지만, '어느 위치에 어떻게 구현할까?'를 계속 질문하며 사용자 중심의 개발을 할 수 있었다.</p>
+                        </div>
                     </div>
-                </div>
                 </article>
 
-                <article class="bg-white/80 rounded-xl shadow-lg overflow-hidden border border-indigo-100">
+                <!-- 포트폴리오 속 3D 모델링 구현 -->
+                <article class="bg-white/80 rounded-xl shadow-lg overflow-hidden border border-indigo-100 project-card">
                     <div class="bg-gradient-to-r from-indigo-500 to-purple-500 h-2"></div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2 text-indigo-700">포트폴리오 속 3D 모델링 구현</h3>
-                    <div class="text-gray-600 mb-4">
-                        <p><strong>기간</strong>: 2025.05.14 ～ 포트폴리오 완성할때까지</p>
-                        <p><strong>기여도</strong>: 기획부터 구현까지 전체 개발</p>
-                    </div>
-                    <p class="mb-4">포트폴리오 웹사이트에 Three.js를 활용한 인터랙티브 3D 요소를 구현했습니다.<br>사용자가 직접 조작할 수 있는 3D 모델을 통해 기술적 역량과 창의성을 효과적으로 보여주는 프로젝트입니다.</p>
-                    
-                    <div class="mb-4">
-                        <h4 class="font-semibold mb-2 text-indigo-600">📌 주요 기능</h4>
-                        <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li>Three.js를 활용한 인터랙티브 3D 모델 구현</li>
-                            <li>사용자 조작에 반응하는 애니메이션 효과</li>
-                            <li>반응형 디자인으로 모바일 환경 지원</li>
-                        </ul>
-                    </div>
+                        <h3 class="text-2xl font-semibold mb-2 text-indigo-700 title-emphasis">포트폴리오 속 3D 모델링 구현</h3>
+                        <div class="text-gray-600 mb-4">
+                            <p><span class="date-badge"><strong>기간</strong>: 2025.05.14 ～ 포트폴리오 완성할때까지</span></p>
+                            <p><strong>기여도</strong>: <span class="highlight-text">기획부터 구현까지 전체 개발</span></p>
+                        </div>
+                        <p class="mb-4 important-paragraph">포트폴리오 웹사이트에 Three.js를 활용한 인터랙티브 3D 요소를 구현했습니다.<br>사용자가 직접 조작할 수 있는 3D 모델을 통해 기술적 역량과 창의성을 효과적으로 보여주는 프로젝트입니다.</p>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2 text-indigo-600">📌 주요 기능</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li><span class="highlight-text">Three.js를 활용한 인터랙티브 3D 모델 구현</span></li>
+                                <li>사용자 조작에 반응하는 애니메이션 효과</li>
+                                <li>반응형 디자인으로 모바일 환경 지원</li>
+                            </ul>
+                        </div>
 
-                    <div class="mb-4">
-                        <h4 class="font-semibold mb-2 text-indigo-600">🔧 사용 기술</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full">Three.js</span>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full">JavaScript</span>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full">HTML/CSS</span>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full">Blender</span>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2 text-indigo-600">🔧 사용 기술</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full tech-tag">Three.js</span>
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full tech-tag">JavaScript</span>
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full tech-tag">HTML/CSS</span>
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full tech-tag">Blender</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2 text-indigo-600">🧠 경험 포인트</h4>
+                            <ul class="list-none space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-indigo-500">✓</span>
+                                    <span>3D 모델링과 웹 기술의 <span class="key-skill">효과적인 통합 방법</span> 학습</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-indigo-500">✓</span>
+                                    <span>사용자 경험을 고려한 <span class="highlight-text">3D 인터랙션 설계</span></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-indigo-500">✓</span>
+                                    <span>성능 최적화를 통한 부드러운 렌더링 구현</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-indigo-500">✓</span>
+                                    <span>다양한 브라우저 환경에서의 호환성 문제 해결</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2 text-indigo-600">👥 대상 사용자</h4>
+                            <p class="text-gray-700">제 포트폴리오를 보는 분들에게 좀 더 인상적인 경험을 주고 싶었습니다. 그냥 텍스트와 이미지만 있는 포트폴리오보다는, 직접 3D 요소와 상호작용하면서 제 기술력을 체험해볼 수 있게 하고 싶었습니다.</p>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-lg border-l-4 border-indigo-500 reflection-box">
+                            <h4 class="font-semibold mb-2 text-indigo-600">💬 회고및 내가 느끼기에 어려웠던 점</h4>
+                            <p class="italic text-gray-700">포트폴리오에 3D 요소를 여러가지 추가하려고 하며 나의 기술적 한계에 도전했다. 로딩 시간과 성능 최적화가 가장 중요했고, 사용자 경험을 해치지 않으면서도 인상적인 시각 효과를 구현하는 방법을 배웠다. Blender와 Three.js 연동 과정에서 예상치 못한 문제들을 해결하며 웹 기반 3D 개발에 대한 이해가 깊어지고 있는 중이다.</p>
                         </div>
                     </div>
-
-                    <div class="mb-4">
-                        <h4 class="font-semibold mb-2 text-indigo-600">🧠 경험 포인트</h4>
-                        <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li>3D 모델링과 웹 기술의 효과적인 통합 방법 학습</li>
-                            <li>사용자 경험을 고려한 3D 인터랙션 설계</li>
-                            <li>성능 최적화를 통한 부드러운 렌더링 구현</li>
-                            <li>다양한 브라우저 환경에서의 호환성 문제 해결</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-lg border-l-4 border-indigo-500">
-                        <h4 class="font-semibold mb-2 text-indigo-600">💬 회고</h4>
-                        <p class="italic text-gray-700">"기존 웹사이트에 3D 요소를 통합하며 기술적 한계에 도전했습니다. 특히 로딩 시간과 성능 최적화에 집중하여 사용자 경험을 해치지 않으면서도 인상적인 시각 효과를 구현하는 방법을 배웠습니다."</p>
-                    </div>
-                </div>
                 </article>
 
-                <article class="bg-white/80 rounded-xl shadow-lg overflow-hidden border border-purple-100">
+                <!-- 3D 공 굴리기 미로 게임 -->
+                <article class="bg-white/80 rounded-xl shadow-lg overflow-hidden border border-purple-100 project-card">
                     <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-2"></div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2 text-purple-700">3D 공 굴리기 미로 게임</h3>
-                    <div class="text-gray-600 mb-4">
-                        <p><strong>기간</strong>: 2025.05.17 ～ 2025.05.20</p>
-                        <p><strong>기여도</strong>: 기획부터 구현까지 전체 개발</p>
-                    </div>
-                    <p class="mb-4">Three.js를 활용한 인터랙티브 3D 공 굴리기 미로 게임입니다.<br>사용자의 마우스나 키보드 조작에 반응하여 판을 기울이고 공을 굴려 목적지에 도달하는 게임입니다.</p>
+                        <h3 class="text-2xl font-semibold mb-2 text-purple-700 title-emphasis">3D 공 굴리기 미로 게임</h3>
+                        <div class="text-gray-600 mb-4">
+                            <p><span class="date-badge"><strong>기간</strong>: 2025.05.17 ～ 2025.05.20</span></p>
+                            <p><strong>기여도</strong>: <span class="highlight-text">기획부터 구현까지 전체 개발</span></p>
+                        </div>
+                        <p class="mb-4 important-paragraph">Three.js를 활용한 인터랙티브 3D 공 굴리기 미로 게임입니다.<br>사용자의 마우스나 키보드 조작에 반응하여 판을 기울이고 공을 굴려 목적지에 도달하는 게임입니다.</p>
+                        
+                        <!-- 여기에 게임 캔버스가 들어갑니다 -->
+                        <div class="w-full h-80 bg-gray-100 rounded-lg mb-6 overflow-hidden relative" id="game-container">
+                            <canvas id="maze-game" class="w-full h-full"></canvas>
+                            <div id="game-ui" class="absolute top-2 left-2 bg-white/70 p-1 rounded text-xs">
+                                레벨: <span id="level">1</span> | 시간: <span id="timer">0</span>초
+                            </div>
+                            <div id="game-instructions" class="absolute bottom-2 left-0 right-0 mx-auto w-4/5 text-center bg-white/70 p-1 rounded text-xs">
+                                방향키 또는 마우스로 판을 기울여 공을 굴리세요!
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2 text-purple-600">📌 주요 기능</h4>
+                            <ul class="list-none space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-purple-500">✓</span>
+                                    <span><span class="highlight-text">Three.js를 활용한 인터랙티브 3D 미로 구현</span></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-purple-500">✓</span>
+                                    <span>사용자 입력에 반응하는 물리 시뮬레이션</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-purple-500">✓</span>
+                                    <span>충돌 감지 및 게임 로직 처리</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-purple-500">✓</span>
+                                    <span class="mobile-highlight">터치 및 기기 기울기 센서 대응 인터페이스</span>
+                                </li>
+                            </ul>
+                        </div>
                     
-                    <!-- 여기에 게임 캔버스가 들어갑니다 -->
-                    <div class="w-full h-80 bg-gray-100 rounded-lg mb-6 overflow-hidden relative" id="game-container">
-                        <canvas id="maze-game" class="w-full h-full"></canvas>
-                        <div id="game-ui" class="absolute top-2 left-2 bg-white/70 p-1 rounded text-xs">
-                            레벨: <span id="level">1</span> | 시간: <span id="timer">0</span>초
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2 text-purple-600">🔧 사용 기술</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full tech-tag">Three.js</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full tech-tag">JavaScript</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full tech-tag">HTML/CSS</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full tech-tag">물리 시뮬레이션</span>
+                            </div>
                         </div>
-                        <div id="game-instructions" class="absolute bottom-2 left-0 right-0 mx-auto w-4/5 text-center bg-white/70 p-1 rounded text-xs">
-                            방향키 또는 마우스로 판을 기울여 공을 굴리세요!
-                        </div>
-                    </div>
                     
-                    <div class="mb-4">
-                        <h4 class="font-semibold mb-2 text-purple-600">📌 주요 기능</h4>
-                        <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li>Three.js를 활용한 인터랙티브 3D 미로 구현</li>
-                            <li>사용자 입력에 반응하는 물리 시뮬레이션</li>
-                            <li>충돌 감지 및 게임 로직 처리</li>
-                        </ul>
-                    </div>
-                
-                    <div class="mb-4">
-                        <h4 class="font-semibold mb-2 text-purple-600">🔧 사용 기술</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full">Three.js</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full">JavaScript</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full">HTML/CSS</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full">물리 시뮬레이션</span>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2 text-purple-600">🧠 경험 포인트</h4>
+                            <ul class="list-none space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-purple-500">✓</span>
+                                    <span>3D 환경에서의 <span class="key-skill">물리 엔진 활용</span> 방법 학습</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-purple-500">✓</span>
+                                    <span>사용자 조작에 즉각적으로 반응하는 <span class="highlight-text">UI/UX 설계</span></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-purple-500">✓</span>
+                                    <span>게임 로직과 시각적 표현의 균형 잡힌 구현</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block mr-2 mt-1 text-purple-500">✓</span>
+                                    <span>성능 최적화를 통한 부드러운 게임 경험 제공</span>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2 text-purple-600">👥 대상 사용자</h4>
+                            <p class="text-gray-700">포트폴리오를 구경하는 모든 분들을 위한 작은 게임입니다. 기술적인 설명만 읽는 것보다 직접 게임을 플레이해보면서 제가 구현한 물리 효과와 인터랙션을 체험해보실 수 있게 만들었습니다.</p>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg border-l-4 border-purple-500 reflection-box">
+                            <h4 class="font-semibold mb-2 text-purple-600">💬 회고및 내가 느끼기에 어려웠던 점</h4>
+                            <p class="italic text-gray-700">Three.js 학습 과정에서 시작한 이 프로젝트는 생각보다 이전 캠퍼스 프로젝트를 다시 보며 코드&구조적으로 도움을 받았던거같고, 특히 물리 엔진 구현과 충돌 감지에 수학적 개념이 많이 필요했고, 다양한 입력 방식(키보드, 마우스, 터치)을 지원하는 과정도 흥미로웠다. 실제 게임을 만들며 JavaScript의 가능성을 더 넓게 경험할 수 있었던 값진 시간이었다고 생각합니다.</p>
                         </div>
                     </div>
-                
-                    <div class="mb-4">
-                        <h4 class="font-semibold mb-2 text-purple-600">🧠 경험 포인트</h4>
-                        <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li>3D 환경에서의 물리 엔진 활용 방법 학습</li>
-                            <li>사용자 조작에 즉각적으로 반응하는 UI/UX 설계</li>
-                            <li>게임 로직과 시각적 표현의 균형 잡힌 구현</li>
-                            <li>성능 최적화를 통한 부드러운 게임 경험 제공</li>
-                        </ul>
-                    </div>
-                
-                    <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg border-l-4 border-purple-500">
-                        <h4 class="font-semibold mb-2 text-purple-600">💬 회고</h4>
-                        <p class="italic text-gray-700">"Three.js의 기본 개념부터 물리 시뮬레이션까지 배우며 실제 게임을 만들어본 경험은 매우 값진 시간이었습니다. 특히 사용자 입력에 자연스럽게 반응하는 인터랙션을 구현하며 웹 기반 3D 개발의 가능성을 체감했습니다."</p>
-                    </div>
-                </div>
                 </article>
             </div>
         </section>
 
-        <section class="mb-12 bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-white/20">
-            <h2 class="text-3xl font-bold mb-6 text-primary">📚 I'm Learning</h2>
+        <section class="mb-12 bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-white/20 section-animate">
+            <h2 class="text-3xl font-bold mb-6 text-primary">
+                <span class="relative inline-block">
+                    📚 I'm Learning
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-primary/20 rounded"></span>
+                </span>
+            </h2>
             <div class="grid grid-cols-2 gap-4 mb-8">
+                <div>
+                    <h3 class="font-semibold mb-2 text-primary mobile-highlight">모바일 개발</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag shadow">React Native</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag shadow">코틀린</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag shadow">안드로이드 스튜디오</span>
+                    </div>
+                </div>
                 <div>
                     <h3 class="font-semibold mb-2">백엔드</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full">Django</span>
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full">FastAPI</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag">Django</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag">FastAPI</span>
                     </div>
                 </div>
                 <div>
                     <h3 class="font-semibold mb-2">클라우드</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full">AWS EC2</span>
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full">S3</span>
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full">Lambda</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag">AWS EC2</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag">S3</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag">Lambda</span>
                     </div>
                 </div>
                 <div>
                     <h3 class="font-semibold mb-2">3D 웹 기술 심화</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full">Blender 연동</span>
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full">모델 최적화</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag">Blender 연동</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag">모델 최적화</span>
                     </div>
                 </div>
                 <div>
                     <h3 class="font-semibold mb-2">CS 기초</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full">운영체제</span>
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full">네트워크</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag">운영체제</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full tech-tag">네트워크</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="mb-12 bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-white/20">
-            <h2 class="text-3xl font-bold mb-6 text-primary">📝 Contact Me</h2>
+        <section class="mb-12 bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-white/20 section-animate">
+            <h2 class="text-3xl font-bold mb-6 text-primary">
+                <span class="relative inline-block">
+                    📝 Contact Me
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-primary/20 rounded"></span>
+                </span>
+            </h2>
             <form id="contactForm" class="space-y-4">
                 <div>
                     <label for="name" class="block text-sm font-medium text-gray-700 mb-1">이름</label>
-                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 hover:border-primary/50">
                 </div>
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-1">이메일</label>
-                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 hover:border-primary/50">
                 </div>
                 <div>
                     <label for="message" class="block text-sm font-medium text-gray-700 mb-1">메시지</label>
-                    <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                    <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 hover:border-primary/50"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-primary text-white py-2 px-4 rounded-md hover:bg-secondary transition-colors duration-200">메시지 보내기</button>
+                <button type="submit" class="w-full bg-primary text-white py-3 px-4 rounded-md hover:bg-secondary transition-colors duration-200 flex items-center justify-center font-medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    메시지 보내기
+                </button>
+                <p class="text-center text-sm text-gray-500 mt-2">메시지를 보내면 Discord로 실시간 알림이 전송됩니다!</p>
             </form>
             <div id="formStatus" class="mt-4 text-center hidden">
-                <p class="text-green-600" id="successMessage">메시지가 성공적으로 전송되었습니다!</p>
-                <p class="text-red-600" id="errorMessage"></p>
+                <p class="text-green-600 bg-green-50 p-3 rounded-md border border-green-200" id="successMessage">메시지가 성공적으로 전송되었습니다!</p>
+                <p class="text-red-600 bg-red-50 p-3 rounded-md border border-red-200" id="errorMessage"></p>
             </div>
         </section>
         
-        <footer class="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-white/20">
-            <h2 class="text-3xl font-bold mb-6 text-primary">🔗 Links</h2>
+        <footer class="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-white/20 section-animate">
+            <h2 class="text-3xl font-bold mb-6 text-primary">
+                <span class="relative inline-block">
+                    🔗 Links
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-primary/20 rounded"></span>
+                </span>
+            </h2>
             <div class="flex gap-4">
                 <a href="https://github.com/cj5427533" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -294,552 +391,11 @@
             </div>
         </footer>
     </div>
-        <!-- Three.js 라이브러리 로드 -->
+    <!-- Three.js 라이브러리 로드 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
     <!-- 게임 스크립트 -->
-    <script>
-
-    document.addEventListener('DOMContentLoaded', function() {
-        // 게임이 시작될 준비가 되었는지 확인
-        if (!document.getElementById('maze-game')) {
-            console.error('게임 캔버스를 찾을 수 없습니다!');
-            return;
-        }
-        
-        // 여기서부터 게임 코드가 시작됩니다
-        initGame();
-    });
-
-    // 게임 초기화 함수
-    function initGame() {
-        // 게임 관련 변수 선언
-        let scene, camera, renderer;
-        let plane, ball, walls = [], goal;
-        let moveSpeed = 0.01;
-        let isGameActive = true;
-        let timer = 0;
-        let timerInterval;
-        
-        // 씬, 카메라, 렌더러 설정
-        setupScene();
-        
-        // 게임 요소 생성
-        createGameElements();
-        
-        // 이벤트 리스너 설정
-        setupEventListeners();
-        
-        // 애니메이션 루프 시작
-        animate();
-        
-        // 씬, 카메라, 렌더러를 설정하는 함수
-        function setupScene() {
-            // 게임 캔버스 가져오기
-            const canvas = document.getElementById('maze-game');
-            const container = document.getElementById('game-container');
-            
-            // 씬 생성
-            scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x87CEEB); // 하늘색 배경
-            
-            // 카메라 설정
-            camera = new THREE.PerspectiveCamera(
-                75, // 시야각
-                container.clientWidth / container.clientHeight, // 화면 비율
-                0.1, // 가까운 클리핑 평면
-                1000 // 먼 클리핑 평면
-            );
-// 카메라 설정 수정
-            camera.position.set(0, 7, 7); 
-            camera.lookAt(0, 0, 0); // 카메라가 바라보는 지점
-            
-            // 렌더러 설정
-            renderer = new THREE.WebGLRenderer({ 
-                canvas: canvas,
-                antialias: true // 부드러운 렌더링
-            });
-            renderer.setSize(container.clientWidth, container.clientHeight);
-            
-            // 조명 추가
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-            scene.add(ambientLight);
-            
-            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-            directionalLight.position.set(10, 20, 10);
-            scene.add(directionalLight);
-            
-            // 창 크기 변경 시 대응
-            window.addEventListener('resize', () => {
-                camera.aspect = container.clientWidth / container.clientHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(container.clientWidth, container.clientHeight);
-            });
-            
-            console.log('씬 설정 완료');
-        }
-        
-        // 게임 요소(미로, 공, 골인 지점) 생성 함수
-        function createGameElements() {
-            // 기본 재질 설정
-            const planeMaterial = new THREE.MeshStandardMaterial({
-                color: 0x44aa88,
-                roughness: 0.5
-            });
-            
-            // 바닥 평면 생성
-            const planeGeometry = new THREE.BoxGeometry(10, 0.2, 10); // 두께 감소
-            plane = new THREE.Mesh(planeGeometry, planeMaterial);
-            plane.position.y = -0.1; // 위치 조정
-            scene.add(plane);
-            
-            // 공 생성
-            const ballGeometry = new THREE.SphereGeometry(0.3, 32, 32);
-            const ballMaterial = new THREE.MeshStandardMaterial({
-                color: 0xff4400,
-                metalness: 0.3,
-                roughness: 0.2
-            });
-            ball = new THREE.Mesh(ballGeometry, ballMaterial);
-            ball.position.set(-4, 0.2, -4); // y 위치 조정
-            ball.castShadow = true;
-            scene.add(ball);
-            
-            // 벽 생성
-            createWalls();
-            
-            // 골인 지점 생성
-            const goalGeometry = new THREE.CylinderGeometry(0.6, 0.6, 0.1, 32);
-            const goalMaterial = new THREE.MeshStandardMaterial({
-                color: 0x00ff00,
-                roughness: 0.3,
-                metalness: 0.2
-            });
-            goal = new THREE.Mesh(goalGeometry, goalMaterial);
-            goal.position.set(4, 0.1, 4); // y 위치 조정
-            scene.add(goal);
-            
-            // 타이머 시작
-            startTimer();
-            
-            console.log('게임 요소 생성 완료');
-        }
-        
-        // 벽 만들기 함수
-        function createWalls() {
-            const wallMaterial = new THREE.MeshStandardMaterial({
-                color: 0x8844aa,
-                roughness: 0.7
-            });
-            
-            // 미로 벽 배치 (간단한 예시)
-            // 가로 벽
-            createWall(-2, 0, 2, 4, 0.5, wallMaterial);
-            createWall(2, 0, -2, 4, 0.5, wallMaterial);
-            
-            // 세로 벽
-            createWall(0, 0, 0, 0.5, 4, wallMaterial);
-            createWall(-3, 0, -2, 0.5, 2, wallMaterial);
-            createWall(3, 0, 2, 0.5, 2, wallMaterial);
-        }
-        
-        // 벽 생성 헬퍼 함수
-        function createWall(x, y, z, width, depth, material) {
-            const wallGeometry = new THREE.BoxGeometry(width, 1, depth);
-            const wall = new THREE.Mesh(wallGeometry, material);
-            wall.position.set(x, y + 0.5, z); // y+0.5로 바닥 위에 위치
-            scene.add(wall);
-            walls.push(wall); // 벽 배열에 추가하여 충돌 감지에 사용
-        }
-        
-        // 타이머 시작 함수
-        function startTimer() {
-            timer = 0;
-            document.getElementById('timer').textContent = timer;
-            
-            timerInterval = setInterval(() => {
-                timer++;
-                document.getElementById('timer').textContent = timer;
-            }, 1000);
-        }
-        
-        // 이벤트 리스너 설정 함수
-        function setupEventListeners() {
-
-            const gameContainer = document.getElementById('game-container');
-            gameContainer.focus();
-            
-            // 키보드 이벤트를 window에 연결 (전역으로 처리)
-            window.addEventListener('keydown', (event) => {
-                // console.log를 추가하여 키 입력을 확인
-                console.log('Key pressed:', event.key);
-                
-                if (!isGameActive && event.key.toLowerCase() === 'r') {
-                    console.log('재시작 시도 중...');
-                    resetGame();
-                    return;
-                }
-                
-                if (!isGameActive) return;
-                
-                switch(event.key) {
-                    case 'ArrowUp':
-                        plane.rotation.x = Math.max(plane.rotation.x - moveSpeed, -0.3);
-                        break;
-                    case 'ArrowDown':
-                        plane.rotation.x = Math.min(plane.rotation.x + moveSpeed, 0.3);
-                        break;
-                    case 'ArrowLeft':
-                        plane.rotation.z = Math.max(plane.rotation.z - moveSpeed, -0.3);
-                        break;
-                    case 'ArrowRight':
-                        plane.rotation.z = Math.min(plane.rotation.z + moveSpeed, 0.3);
-                        break;
-                }
-            });
-            
-            // 키 떼면 원위치로 서서히 돌아오게
-            document.addEventListener('keyup', (event) => {
-                if (!isGameActive) return;
-                
-                if (['ArrowUp', 'ArrowDown'].includes(event.key)) {
-                    // x축 회전 감소
-                    plane.rotation.x *= 0.9;
-                } else if (['ArrowLeft', 'ArrowRight'].includes(event.key)) {
-                    // z축 회전 감소
-                    plane.rotation.z *= 0.9;
-                }
-            });
-            
-            // 마우스 이벤트 변수
-            let isMouseDown = false;
-            let mouseStartPosition = { x: 0, y: 0 };
-
-            // 마우스 이벤트: 드래그로 판 기울이기
-
-            gameContainer.addEventListener('mousedown', (event) => {
-                if (!isGameActive) return;
-                
-                isMouseDown = true;
-                mouseStartPosition = {
-                    x: event.clientX,
-                    y: event.clientY
-                };
-                
-                // 기본 드래그 동작 방지
-                event.preventDefault();
-            });
-
-            document.addEventListener('mousemove', (event) => {
-                if (!isGameActive || !isMouseDown) return;
-                
-                // 마우스 이동 거리 계산
-                const deltaX = event.clientX - mouseStartPosition.x;
-                const deltaY = event.clientY - mouseStartPosition.y;
-                
-                // 이동 거리에 따라 판 기울이기 (민감도 조절)
-                const sensitivity = 0.0005;
-                plane.rotation.z = -deltaX * sensitivity;
-                plane.rotation.x = -deltaY * sensitivity;
-                
-                // 기울기 제한
-                plane.rotation.z = Math.max(Math.min(plane.rotation.z, 0.3), -0.3);
-                plane.rotation.x = Math.max(Math.min(plane.rotation.x, 0.3), -0.3);
-            });
-
-            document.addEventListener('mouseup', () => {
-                isMouseDown = false;
-            });
-
-            // 터치 이벤트도 추가 (모바일 지원)
-            gameContainer.addEventListener('touchstart', (event) => {
-                if (!isGameActive) return;
-                
-                isMouseDown = true;
-                mouseStartPosition = {
-                    x: event.touches[0].clientX,
-                    y: event.touches[0].clientY
-                };
-                
-                // 기본 스크롤 동작 방지
-                event.preventDefault();
-            }, { passive: false });
-
-            document.addEventListener('touchmove', (event) => {
-                if (!isGameActive || !isMouseDown) return;
-                
-                // 터치 이동 거리 계산
-                const deltaX = event.touches[0].clientX - mouseStartPosition.x;
-                const deltaY = event.touches[0].clientY - mouseStartPosition.y;
-                
-                // 이동 거리에 따라 판 기울이기 (민감도 조절)
-                const sensitivity = 0.0005;
-                plane.rotation.z = -deltaX * sensitivity;
-                plane.rotation.x = -deltaY * sensitivity;
-                
-                // 기울기 제한
-                plane.rotation.z = Math.max(Math.min(plane.rotation.z, 0.3), -0.3);
-                plane.rotation.x = Math.max(Math.min(plane.rotation.x, 0.3), -0.3);
-                
-                // 기본 스크롤 동작 방지
-                event.preventDefault();
-            }, { passive: false });
-
-            document.addEventListener('touchend', () => {
-                isMouseDown = false;
-            });
-
-            console.log('이벤트 리스너 설정 완료');
-        }
-
-        // 게임 리셋 함수
-        function resetGame() {
-            console.log('게임 재시작!');
-            
-            // 공 위치 초기화
-            ball.position.set(-4, 0.3, -4);
-            
-            // 공 속도 초기화
-            ball.userData.velocityX = 0;
-            ball.userData.velocityZ = 0;
-            
-            // 판 회전 초기화
-            plane.rotation.x = 0;
-            plane.rotation.z = 0;
-            
-            // 게임 상태 초기화
-            isGameActive = true;
-            
-            // 안내 메시지 초기화
-            const instructions = document.getElementById('game-instructions');
-            if (instructions) {
-                instructions.textContent = '방향키 또는 마우스로 판을 기울여 공을 굴리세요!';
-                instructions.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-            }
-            
-            // 이전에 생성된 재시작 버튼 제거
-            const existingButton = document.querySelector('#game-container button');
-            if (existingButton) {
-                existingButton.remove();
-            }
-            
-            // 타이머 재시작
-            clearInterval(timerInterval);
-            startTimer();
-            
-            // 게임 컨테이너에 다시 포커스
-            const gameContainer = document.getElementById('game-container');
-            if (gameContainer) {
-                gameContainer.focus();
-            }
-        }
-        
-        function handleWin() {
-            isGameActive = false;
-            clearInterval(timerInterval);
-            
-            // 승리 메시지 표시
-            const instructions = document.getElementById('game-instructions');
-            instructions.textContent = `축하합니다! ${timer}초만에 클리어했습니다. R키를 눌러 재시작하세요.`;
-            instructions.style.backgroundColor = 'rgba(0, 255, 0, 0.7)';
-            
-            // 보다 뚜렷한 재시작 안내를 위해 추가 버튼 생성
-            const restartButton = document.createElement('button');
-            restartButton.textContent = '재시작';
-            restartButton.className = 'absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-2 rounded';
-            restartButton.onclick = resetGame;
-            document.getElementById('game-container').appendChild(restartButton);
-        }
-        
-        // 공 움직임 업데이트 함수
-        function updateBall() {
-            if (!isGameActive) return;
-    
-            // 기울기에 따른 공 이동 (간단한 물리 시뮬레이션)
-            const gravity = 0.01;
-            const friction = 0.98;
-            
-            // 현재 속도 계산 (기울기에 비례) - 방향 수정
-            ball.userData.velocityX = (ball.userData.velocityX || 0) - plane.rotation.z * gravity;
-            ball.userData.velocityZ = (ball.userData.velocityZ || 0) + plane.rotation.x * gravity;
-            
-            // 마찰력 적용
-            ball.userData.velocityX *= friction;
-            ball.userData.velocityZ *= friction;
-            
-            // 속도 적용하여 공 이동 (x, z 평면으로만 이동)
-            ball.position.x += ball.userData.velocityX;
-            ball.position.z += ball.userData.velocityZ;
-            
-            // 중요: 공의 y 위치를 바닥에 고정
-            const ballRadius = 0.3; // 공의 반지름
-            // 바닥 평면 상의 공 위치에서의 y 좌표 계산
-            const planeY = getPlaneYAtPoint(ball.position.x, ball.position.z);
-            // 공의 y 위치를 바닥 위 반지름 높이로 설정
-            ball.position.y = planeY + ballRadius;
-            
-            // 바닥 경계 충돌 체크
-            const boundaryLimit = 4.7;
-            if (Math.abs(ball.position.x) > boundaryLimit) {
-                ball.position.x = Math.sign(ball.position.x) * boundaryLimit;
-                ball.userData.velocityX *= -0.5; // 반대 방향으로 튕김 (에너지 손실)
-            }
-            if (Math.abs(ball.position.z) > boundaryLimit) {
-                ball.position.z = Math.sign(ball.position.z) * boundaryLimit;
-                ball.userData.velocityZ *= -0.5; // 반대 방향으로 튕김 (에너지 손실)
-            }
-            
-            // 벽과의 충돌 감지
-            walls.forEach(wall => {
-                // 간단한 충돌 감지 (실제로는 더 복잡한 충돌 감지가 필요함)
-                const ballBox = new THREE.Box3().setFromObject(ball);
-                const wallBox = new THREE.Box3().setFromObject(wall);
-                
-                if (ballBox.intersectsBox(wallBox)) {
-                    // 충돌 시 속도 반전 및 감소
-                    ball.userData.velocityX *= -0.8;
-                    ball.userData.velocityZ *= -0.8;
-                    
-                    // 충돌 후 약간 위치 조정 (관통 방지)
-                    const pushDistance = 0.1;
-                    const xDiff = ball.position.x - wall.position.x;
-                    const zDiff = ball.position.z - wall.position.z;
-                    
-                    if (Math.abs(xDiff) > Math.abs(zDiff)) {
-                        ball.position.x += Math.sign(xDiff) * pushDistance;
-                    } else {
-                        ball.position.z += Math.sign(zDiff) * pushDistance;
-                    }
-                }
-            });
-            
-            // 골인 지점 충돌 감지
-            const ballToGoal = new THREE.Vector2(
-                ball.position.x - goal.position.x,
-                ball.position.z - goal.position.z
-            );
-            
-            if (ballToGoal.length() < 0.6) {
-                console.log('골인!');
-                handleWin();
-            }
-
-        }
-        
-        // 바닥 평면 상의 특정 지점 (x, z)에서의 y 좌표를 계산하는 함수
-        function getPlaneYAtPoint(x, z) {
-            // 평면의 법선 벡터
-            const normal = new THREE.Vector3(plane.rotation.z, 1, -plane.rotation.x).normalize();
-            
-            // 평면 중심에서의 높이 (평면의 y 위치)
-            const planeCenter = plane.position.y;
-            
-            // 평면 상의 점 (x, ?, z)의 y 좌표 계산
-            // 평면 방정식: normal.x * x + normal.y * y + normal.z * z + d = 0
-            // 여기서 d = -(normal.x * center.x + normal.y * center.y + normal.z * center.z)
-            const d = -(normal.x * 0 + normal.y * planeCenter + normal.z * 0);
-            
-            // y 좌표 계산: y = -(normal.x * x + normal.z * z + d) / normal.y
-            return -(normal.x * x + normal.z * z + d) / normal.y;
-        }
-
-        // 골인 지점도 바닥 위에 고정하기
-        function updateGoalPosition() {
-            const goalX = 4;
-            const goalZ = 4;
-            const goalHeight = 0.05; // 골인 지점 높이 (반지름)
-            
-            // 바닥 평면 상의 골인 지점 위치에서의 y 좌표 계산
-            const planeY = getPlaneYAtPoint(goalX, goalZ);
-            
-            // 골인 지점의 y 위치를 바닥 위로 설정
-            goal.position.y = planeY + goalHeight;
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-            
-            // 공 위치 업데이트
-            updateBall();
-            
-            // 골인 지점 위치 업데이트
-            updateGoalPosition();
-            
-            // 벽 위치 업데이트
-            walls.forEach(wall => {
-                // 벽의 중심 x, z 좌표
-                const wallX = wall.position.x;
-                const wallZ = wall.position.z;
-                const wallHeight = 0.5; // 벽 높이 (중심까지의 높이)
-                
-                // 바닥 평면 상의 벽 위치에서의 y 좌표 계산
-                const planeY = getPlaneYAtPoint(wallX, wallZ);
-                
-                // 벽의 y 위치를 바닥 위로 설정
-                wall.position.y = planeY + wallHeight;
-            });
-            
-            // 평면이 서서히 원래 위치로 돌아오게
-            if (!isGameActive) {
-                plane.rotation.x *= 0.95;
-                plane.rotation.z *= 0.95;
-            }
-            
-            // 씬 렌더링
-            renderer.render(scene, camera);
-        }
-    };
-    </script>
+    <script src="js/maze-game.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
-<script>
-    // 스크롤에 따라 배경 그라데이션 변경
-    window.addEventListener('scroll', function() {
-        const scrollPosition = window.scrollY;
-        const documentHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollPercentage = (scrollPosition / documentHeight) * 100;
-        
-        // 스크롤 위치에 따라 배경 위치 변경
-        document.getElementById('dynamic-bg').style.backgroundPosition = `${scrollPercentage}% ${scrollPercentage/2}%`;
-    });
-    
-    document.getElementById('contactForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formStatus = document.getElementById('formStatus');
-        const successMessage = document.getElementById('successMessage');
-        const errorMessage = document.getElementById('errorMessage');
-        
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value
-        };
-
-        try {
-            const response = await fetch('https://proud-lab-22e2.cj542753315.workers.dev/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData)
-            });
-
-            formStatus.classList.remove('hidden');
-            if (response.ok) {
-                successMessage.classList.remove('hidden');
-                errorMessage.classList.add('hidden');
-                e.target.reset();
-            } else {
-                const errorText = await response.text();
-                errorMessage.textContent = errorText;
-                errorMessage.classList.remove('hidden');
-                successMessage.classList.add('hidden');
-            }
-        } catch (error) {
-            formStatus.classList.remove('hidden');
-            errorMessage.textContent = '서버 연결에 실패했습니다. 잠시 후 다시 시도해주세요.';
-            errorMessage.classList.remove('hidden');
-            successMessage.classList.add('hidden');
-        }
-    });
-</script>

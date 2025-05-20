@@ -1,0 +1,146 @@
+/* 전체 글씨체 조정 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* 배경 패턴 */
+.bg-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+#dynamic-bg {
+    background: linear-gradient(135deg, #6366f1 0%, #0ea5e9 50%, #06b6d4 100%);
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    transition: background-position 0.3s ease;
+}
+
+/* 강조 텍스트 스타일 */
+.highlight-text {
+    background: linear-gradient(120deg, rgba(14, 165, 233, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);
+    padding: 0.1em 0.4em;
+    border-radius: 0.3em;
+    font-weight: 600;
+}
+
+/* 주요 핵심 역량 강조 */
+.key-skill {
+    font-weight: 700;
+    color: #0EA5E9;
+    border-bottom: 2px dotted #0EA5E9;
+    padding-bottom: 1px;
+}
+
+/* 회고 섹션 스타일 개선 */
+.reflection-box {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.reflection-box::before {
+    content: '"';
+    font-size: 2.5rem;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    color: rgba(99, 102, 241, 0.3);
+    font-family: Georgia, serif;
+}
+
+/* 프로젝트 기간 뱃지 */
+.date-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(14, 165, 233, 0.1);
+    border-radius: 1rem;
+    font-weight: 500;
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    margin-bottom: 0.5rem;
+}
+
+/* 제목 강조 효과 */
+.title-emphasis {
+    display: inline-block;
+    position: relative;
+}
+
+.title-emphasis::after {
+    content: '';
+    position: absolute;
+    bottom: -0.2rem;
+    left: 0;
+    width: 100%;
+    height: 0.35rem;
+    background-color: rgba(14, 165, 233, 0.2);
+    z-index: -1;
+    border-radius: 0.1rem;
+}
+
+/* 중요 문단 스타일 */
+.important-paragraph {
+    padding: 1rem;
+    background-color: rgba(6, 182, 212, 0.05);
+    border-left: 3px solid #06B6D4;
+    border-radius: 0.3rem;
+    margin: 1rem 0;
+}
+
+/* 기술 태그 애니메이션 */
+.tech-tag {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tech-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* 모바일 개발 강조 스타일 */
+.mobile-highlight {
+    position: relative;
+    display: inline-block;
+}
+
+.mobile-highlight::after {
+    content: "";
+    position: absolute;
+    top: -1rem;
+    right: -1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* 프로젝트 카드 호버 효과 */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeUp {
+    animation: fadeUp 0.5s ease forwards;
+}
+
+/* 자동 애니메이션 적용 (스크롤 시 적용되도록) */
+.section-animate {
+    opacity: 0;
+}
+
+.section-animate.visible {
+    animation: fadeUp 0.5s ease forwards;
+} 
