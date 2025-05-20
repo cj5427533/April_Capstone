@@ -8,7 +8,9 @@
 
 ## 👤 프로필 & 자기소개
 
-![프로필 이미지]
+<p align="center">
+  <img src="images/myProfile.jpg" alt="내 프로필 사진" width="60%" />
+</p>
 
 - 👋 **GyuJin Cheon**
 - "사용자 중심의 UI/UX를 고민하며 웹과 모바일 모두에서 최적화된 경험을 제공하는 개발자"
